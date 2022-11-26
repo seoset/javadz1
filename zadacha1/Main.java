@@ -1,27 +1,21 @@
+package com.company;
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        CheckIt check = new CheckIt();
-        PrintDot output = new PrintDot();
-        Triangle func = new Triangle();
-
-        Scanner cons = new Scanner(System.in);
-        String input = cons.nextLine();
-        System.out.println();
-        cons.close();
-
-        if (check.isDigit(input) == true) {
-            System.out.println("Вы ввели неверные значения. Допустимы целые, положительные числа.");
-        } else if (check.isBiggerThan(input) == true) {
-            output.printSymbol(func.triangleF(Integer.parseInt(input)));
-            System.out.printf("%s-е треугольное число: %d", input, func.triangleF(Integer.parseInt(input)));
-
-        } else {
-            System.out.println("Вы ввели неверные значения. Допустимы целые, положительные числа.");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        int fact = 1;
+        for (int j = 0; j <= n; j++){    //сумма n-ое треугольного числа
+            sum = sum + j;
         }
+        for (int i = 1; i <= n; i++){   //Factorial
+            fact = fact * i;
+        }
+        System.out.println("Сумма треугольного числа: " + sum);
+        System.out.println("Факториал числа n: " + fact);
     }
-
 }
